@@ -5,8 +5,7 @@ using UnityEngine;
 public class Enclosure : MonoBehaviour
 {
     public TextMeshProUGUI ScoresText;
-
-    int scores;
+    public int scoresPerSheep = 1;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,23 +13,25 @@ public class Enclosure : MonoBehaviour
 
         if (go.layer == LayerMask.NameToLayer("Sheep"))
         {
-            scores++;
-            go.layer = LayerMask.NameToLayer("Default");
-            StartCoroutine(StopSheep(go));
+            GameManager.Instance.AddScores(scoresPerSheep);
+
             StartCoroutine(HideSheep(go));
-            ScoresText.text = "Score: " + scores;
+
+            ScoresText.text = "Score: " + GameManager.Instance.Scores;
         }
     }
 
-    IEnumerator HideSheep(GameObject go)
+    IEnumerator HideSheep(GameObject sheepObject)
     {
-        yield return new WaitForSeconds(2);
-        FindObjectOfType<Dog>().sheepsAround.Remove(go.GetComponent<Sheep>());
-        Destroy(go);
-    }
-    IEnumerator StopSheep(GameObject go)
-    {
+        sheepObject.layer = LayerMask.NameToLayer("Default");
+
         yield return new WaitForSeconds(1);
-        go.GetComponent<Sheep>().enabled = false;
+
+        sheepObject.GetComponent<Sheep>().enabled = false;
+
+        yield return new WaitForSeconds(1);
+
+        FindObjectOfType<Dog>().sheepsAround.Remove(sheepObject.GetComponent<Sheep>());
+        Destroy(sheepObject);
     }
 }
