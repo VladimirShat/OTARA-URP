@@ -1877,7 +1877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dog: {fileID: 7661522923013353946}
-  sheepRunningSpeed: 3
+  sheepRunningSpeed: 4
 --- !u!1 &6968255378360727000
 GameObject:
   m_ObjectHideFlags: 0
