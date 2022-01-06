@@ -22,6 +22,9 @@ public class ThirdPersonController : MonoBehaviour
     private AudioSource bark;
     bool canBark = true;
 
+    //ForAndroid
+    [SerializeField] private FixedJoystick joystick;
+
     private void Awake()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -47,7 +50,7 @@ public class ThirdPersonController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        forceDirection += move.ReadValue<Vector2>().x * GetCameraRight(playerCamera) * movementForce;
+        /*forceDirection += move.ReadValue<Vector2>().x * GetCameraRight(playerCamera) * movementForce;
         forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(playerCamera) * movementForce;
 
         rb.AddForce(forceDirection, ForceMode.Impulse);
@@ -62,7 +65,14 @@ public class ThirdPersonController : MonoBehaviour
             rb.velocity = horizontalVelocity.normalized * maxSpeed + Vector3.up * rb.velocity.y;
 
         LookAt();
-        Debug.Log(IsGrounded());
+        Debug.Log(IsGrounded());*/
+
+        rb.velocity = new Vector3(joystick.Horizontal * maxSpeed, rb.velocity.y, joystick.Vertical * maxSpeed);
+
+        if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+        {
+            transform.rotation = Quaternion.LookRotation(rb.velocity);
+        }
     }
 
     private void LookAt()
