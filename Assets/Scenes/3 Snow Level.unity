@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 967c3cce6b26bb74297ad85ebefb98ed, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e5c24f5d7e1b8b042ad3ebbe8decce72, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2206,6 +2206,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 902403942555250854, guid: 671dc7f46c95d3445a56aa0ae3005cc9, type: 3}
   m_PrefabInstance: {fileID: 398011944}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &398011947 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 902403942295404645, guid: 671dc7f46c95d3445a56aa0ae3005cc9, type: 3}
+  m_PrefabInstance: {fileID: 398011944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &409708843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3674,14 +3679,6 @@ PrefabInstance:
       propertyPath: ScoresText
       value: 
       objectReference: {fileID: 122334600}
-    - target: {fileID: 8483105337453813309, guid: 514b2b7d60b331d4bb81b2dec802e190, type: 3}
-      propertyPath: scoresBySheep
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8483105337453813309, guid: 514b2b7d60b331d4bb81b2dec802e190, type: 3}
-      propertyPath: scoresPerSheep
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8483105337453813311, guid: 514b2b7d60b331d4bb81b2dec802e190, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7187,6 +7184,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6904562840532967965, guid: 208261efc58add04c9ca04cd3ae9baf7, type: 3}
   m_PrefabInstance: {fileID: 1496697540}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1507843621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507843624}
+  - component: {fileID: 1507843623}
+  - component: {fileID: 1507843622}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1507843622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507843621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1507843623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507843621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1507843624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507843621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1523710028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7784,6 +7848,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1578415334}
+  - component: {fileID: 1578415335}
   m_Layer: 0
   m_Name: Sheeps
   m_TagString: Untagged
@@ -7818,6 +7883,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1578415335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578415333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1626d30b4e1a748b10a774cc0bf397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dog: {fileID: 398011947}
+  Sheeps: []
 --- !u!1001 &1590522994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10329,14 +10408,6 @@ PrefabInstance:
       propertyPath: ScoresText
       value: 
       objectReference: {fileID: 122334600}
-    - target: {fileID: 6331185126470369486, guid: ff1bf7f7e957b3443aad7ed5e078cf6c, type: 3}
-      propertyPath: scoresBySheep
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6331185126470369486, guid: ff1bf7f7e957b3443aad7ed5e078cf6c, type: 3}
-      propertyPath: scoresPerSheep
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff1bf7f7e957b3443aad7ed5e078cf6c, type: 3}
 --- !u!1001 &4319889398240589446

@@ -10,11 +10,11 @@ EditorBuildSettings:
     guid: 2b7aad6dda409f04a9b6cd6a0814c5da
   - enabled: 1
     path: Assets/Scenes/1 Desert Level.unity
-    guid: f772b9feee69fb04b9843204ee80c48d
+    guid: 81ebd9f0aeb7ede4fb299eca958726d5
   - enabled: 1
     path: Assets/Scenes/2 Green Level.unity
     guid: 997ade15548e9c4449a450fe0eb566ac
   - enabled: 1
     path: Assets/Scenes/3 Snow Level.unity
-    guid: 14e726449a724164a860db98772d2031
+    guid: e15a40cae0e3efa4a8691eefe7ba1bd1
   m_configObjects: {}
