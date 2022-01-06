@@ -835,6 +835,7 @@ MonoBehaviour:
   jumpForce: 7
   maxSpeed: 10
   playerCamera: {fileID: 1251012989749542506}
+  joystick: {fileID: 0}
 --- !u!95 &902403942295404644
 Animator:
   serializedVersion: 4
@@ -964,6 +965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheepsAround: []
+  sphCollider: {fileID: 6209632930737580264}
 --- !u!114 &9110273130185505560
 MonoBehaviour:
   m_ObjectHideFlags: 0

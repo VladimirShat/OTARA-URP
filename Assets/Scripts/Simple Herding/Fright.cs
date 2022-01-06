@@ -29,13 +29,13 @@ public class Fright : MonoBehaviour
                 dir += hit.normal * 50;
             }
         }
-        //if (Physics.SphereCast(transform.position, 1, transform.forward, out hit, sheepController.DstBetweenSheeps, sheepController.sheepMask))
-        //{
-        //    if (hit.transform != transform)
-        //    {
-        //        dir += hit.normal * 50;
-        //    }
-        //}
+        if (Physics.SphereCast(transform.position, 1, transform.forward, out hit, sheepController.DstBetweenSheeps, sheepController.sheepMask))
+        {
+            if (hit.transform != transform)
+            {
+                dir += hit.normal * 25;
+            }
+        }
 
         var dirL = Quaternion.AngleAxis(-25, transform.up) * transform.forward * (1 + transform.localScale.x / 2);
         dirL.y = transform.forward.y;
@@ -54,7 +54,7 @@ public class Fright : MonoBehaviour
         //{
         //    if (hit.transform != transform)
         //    {
-        //        dir -= hit.normal * 50;
+        //        dir += hit.normal * 50;
         //    }
         //}
 
