@@ -6303,6 +6303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68a1623c52d9f146876e38d2b7d8544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnSuccessLogin:
+    m_PersistentCalls:
+      m_Calls: []
   rowPrefab: {fileID: 0}
   rowsParent: {fileID: 0}
 --- !u!1001 &1291084648
@@ -7034,6 +7037,16 @@ PrefabInstance:
       propertyPath: levelEndScreen
       value: 
       objectReference: {fileID: 1751331803}
+    - target: {fileID: 3163308986921144512, guid: 8faa3ad1b22bc184aaeb0aaeb2dbcfb1, type: 3}
+      propertyPath: _data._json
+      value: '{"declarations":{"collection":{"$content":[{"name":"KeyCode","value":{"$content":"Escape","$type":"UnityEngine.KeyCode"},"typeHandle":{"Identification":"UnityEngine.KeyCode,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Menu","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163308986921144512, guid: 8faa3ad1b22bc184aaeb0aaeb2dbcfb1, type: 3}
+      propertyPath: _data._objectReferences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3163308986921144512, guid: 8faa3ad1b22bc184aaeb0aaeb2dbcfb1, type: 3}
       propertyPath: _data._objectReferences.Array.data[0]
       value: 
@@ -8807,7 +8820,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1751331799 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5680704988291040431, guid: 479c55790d797a94ab8106137378f6fa, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6702055812136228750, guid: 479c55790d797a94ab8106137378f6fa, type: 3}
   m_PrefabInstance: {fileID: 1751331797}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
