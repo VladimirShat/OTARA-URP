@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 public class CameraOrbit : MonoBehaviour
 {
@@ -17,10 +17,13 @@ public class CameraOrbit : MonoBehaviour
 
     public bool CameraDisabled;
 
-    // Режимы для камеры
+    // Р РµР¶РёРјС‹ РґР»СЏ РєР°РјРµСЂС‹
 
     public float cameraDistanceLowerBoundary = 4;
     public float cameraDistanceUpperBoundary = 16f;
+
+    //ForAndroid
+    [SerializeField] private FixedJoystick joystick;
 
     public void StandartMode()
     {
@@ -42,7 +45,7 @@ public class CameraOrbit : MonoBehaviour
         this._XForm_Camera = this.transform;
         this._XForm_Parent = this.transform.parent;
 
-        // Куда повернута камера в начале
+        // РљСѓРґР° РїРѕРІРµСЂРЅСѓС‚Р° РєР°РјРµСЂР° РІ РЅР°С‡Р°Р»Рµ
         _LocalRotation = new Vector3(0f, 30f, 0f);
         this._XForm_Parent.rotation = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x, _LocalRotation.z);
 
@@ -51,7 +54,8 @@ public class CameraOrbit : MonoBehaviour
 
     void LateUpdate()
     {
-        //Отключение камеры
+#if !UNITY_ANDROID
+        //РћС‚РєР»СЋС‡РµРЅРёРµ РєР°РјРµСЂС‹
         if (Input.GetKeyDown(KeyCode.Mouse1))
             CameraDisabled = false;
         if (Input.GetKeyUp(KeyCode.Mouse1))
@@ -59,28 +63,47 @@ public class CameraOrbit : MonoBehaviour
 
         if (!CameraDisabled)
         {
-            // Вращение камеры на основе координат мыши
+            // Р’СЂР°С‰РµРЅРёРµ РєР°РјРµСЂС‹ РЅР° РѕСЃРЅРѕРІРµ РєРѕРѕСЂРґРёРЅР°С‚ РјС‹С€Рё
             if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
             {
                 _LocalRotation.x += Input.GetAxis("Mouse X") * MouseSensitivity;
                 _LocalRotation.y -= Input.GetAxis("Mouse Y") * MouseSensitivity;
 
-                // Установка границ вращения
+                // РЈСЃС‚Р°РЅРѕРІРєР° РіСЂР°РЅРёС† РІСЂР°С‰РµРЅРёСЏ
                 _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, 6f, 90f);
             }
         }
+#endif
 
-        // Зум
+#if UNITY_ANDROID
+        if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+            CameraDisabled = false;
+        if (Input.GetKeyUp(KeyCode.Mouse1))
+            CameraDisabled = true;
+
+        if (!CameraDisabled)
+        {
+            if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+            {
+                _LocalRotation.x -= joystick.Horizontal * 0.5f * MouseSensitivity;
+                _LocalRotation.y -= joystick.Vertical * 0.5f * MouseSensitivity;
+
+                _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, 6f, 90f);
+            }
+        }
+#endif
+
+        // Р—СѓРј
         if (Input.GetAxis("Mouse ScrollWheel") != 0f)
         {
             float ScrollAmount = Input.GetAxis("Mouse ScrollWheel") * ScrollSensetivity;
 
-            // Позволяет камере удаляться быстрей, по мере удаления от цели
+            // РџРѕР·РІРѕР»СЏРµС‚ РєР°РјРµСЂРµ СѓРґР°Р»СЏС‚СЊСЃСЏ Р±С‹СЃС‚СЂРµР№, РїРѕ РјРµСЂРµ СѓРґР°Р»РµРЅРёСЏ РѕС‚ С†РµР»Рё
             ScrollAmount *= (this._CameraDistance * 0.3f);
 
             this._CameraDistance += ScrollAmount * -1f;
 
-            // Установка границ приближения-удаления камеры
+            // РЈСЃС‚Р°РЅРѕРІРєР° РіСЂР°РЅРёС† РїСЂРёР±Р»РёР¶РµРЅРёСЏ-СѓРґР°Р»РµРЅРёСЏ РєР°РјРµСЂС‹
             this._CameraDistance = Mathf.Clamp(this._CameraDistance, cameraDistanceLowerBoundary, cameraDistanceUpperBoundary);
         }
 

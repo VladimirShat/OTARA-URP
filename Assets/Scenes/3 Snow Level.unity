@@ -1933,6 +1933,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 81da8289411ff4c4a9b218ba845e7df3, type: 3}
   m_PrefabInstance: {fileID: 328818933}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &331054467 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 916156272286009920, guid: 479c55790d797a94ab8106137378f6fa, type: 3}
+  m_PrefabInstance: {fileID: 1751331797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &347036027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2134,7 +2145,11 @@ PrefabInstance:
     - target: {fileID: 902403942295404647, guid: 671dc7f46c95d3445a56aa0ae3005cc9, type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 331054467}
+    - target: {fileID: 1251012989749542508, guid: 671dc7f46c95d3445a56aa0ae3005cc9, type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1407099689}
     - target: {fileID: 1563929488585521590, guid: 671dc7f46c95d3445a56aa0ae3005cc9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2200,6 +2215,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 902403942295404645, guid: 671dc7f46c95d3445a56aa0ae3005cc9, type: 3}
   m_PrefabInstance: {fileID: 398011944}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &398011948 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 902403942295404647, guid: 671dc7f46c95d3445a56aa0ae3005cc9, type: 3}
+  m_PrefabInstance: {fileID: 398011944}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80470cab4f94a114388fb6d6968b747f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &409708843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6875,6 +6901,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: dca3f0348117fb44b9ac9ae4d25e0921, type: 3}
   m_PrefabInstance: {fileID: 1386001197}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1407099689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1605658439640879686, guid: 479c55790d797a94ab8106137378f6fa, type: 3}
+  m_PrefabInstance: {fileID: 1751331797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1428611938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8443,6 +8480,14 @@ PrefabInstance:
       propertyPath: _data._objectReferences.Array.data[1]
       value: 
       objectReference: {fileID: 1431206020}
+    - target: {fileID: 525924103870113335, guid: 479c55790d797a94ab8106137378f6fa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 398011948}
+    - target: {fileID: 525924103870113335, guid: 479c55790d797a94ab8106137378f6fa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BarkBark
+      objectReference: {fileID: 0}
     - target: {fileID: 2598607943191479297, guid: 479c55790d797a94ab8106137378f6fa, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
