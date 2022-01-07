@@ -51,7 +51,6 @@ public class ThirdPersonController : MonoBehaviour
 
     private void FixedUpdate()
     {
-#if !UNITY_ANDROID
         forceDirection += move.ReadValue<Vector2>().x * GetCameraRight(playerCamera) * movementForce;
         forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(playerCamera) * movementForce;
 
@@ -68,8 +67,7 @@ public class ThirdPersonController : MonoBehaviour
 
         LookAt();
         Debug.Log(IsGrounded());
-#endif
-#if UNITY_ANDROID
+        /*
         forceDirection += joystick.Horizontal * GetCameraRight(playerCamera) * movementForce;
         forceDirection += joystick.Vertical * GetCameraForward(playerCamera) * movementForce;
 
@@ -90,8 +88,7 @@ public class ThirdPersonController : MonoBehaviour
         if(jsVect.sqrMagnitude > 0.05f && direction.sqrMagnitude > 0.05f)
             this.rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
         else
-            rb.angularVelocity = Vector3.zero;
-#endif
+            rb.angularVelocity = Vector3.zero;*/
     }
 
     private void LookAt()

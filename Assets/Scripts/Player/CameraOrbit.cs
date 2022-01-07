@@ -54,7 +54,6 @@ public class CameraOrbit : MonoBehaviour
 
     void LateUpdate()
     {
-#if !UNITY_ANDROID
         //Отключение камеры
         if (Input.GetKeyDown(KeyCode.Mouse1))
             CameraDisabled = false;
@@ -73,7 +72,6 @@ public class CameraOrbit : MonoBehaviour
                 _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, 6f, 90f);
             }
         }
-#endif
 
 #if UNITY_ANDROID
         if (joystick.Horizontal != 0 || joystick.Vertical != 0)

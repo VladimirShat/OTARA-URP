@@ -609,7 +609,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_text
-      value: exit
+      value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
+      propertyPath: m_fontSize
+      value: 34.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34.88
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577759, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -653,11 +665,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577760, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 316.093
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577760, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 63.246
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577760, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1005,7 +1017,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -40}
+  m_AnchoredPosition: {x: 50, y: -75}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &525626353
@@ -1030,8 +1042,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: OTARA
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e541f94b5fde46d4792b6f7f9bfd26c3, type: 2}
+  m_sharedMaterial: {fileID: -803753143368076239, guid: e541f94b5fde46d4792b6f7f9bfd26c3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2274,6 +2286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressBar: {fileID: 1029842144}
+  circle: {fileID: 0}
 --- !u!1 &1676082327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2869,7 +2882,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_text
-      value: settings
+      value: Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
+      propertyPath: m_fontSize
+      value: 34.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34.88
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577760, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_Pivot.x
@@ -2901,11 +2926,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577760, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 316.093
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577760, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 63.246
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577760, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8829,6 +8854,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressBar
       objectReference: {fileID: 0}
+    - target: {fileID: 7693827386641774151, guid: 20f89a137ea68004991bd68717dc535b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693827387128699595, guid: 20f89a137ea68004991bd68717dc535b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20f89a137ea68004991bd68717dc535b, type: 3}
 --- !u!1001 &8132097974718844031
@@ -8840,9 +8873,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_text
-      value: 'new game
+      value: 'New game
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
+      propertyPath: m_fontSize
+      value: 34.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132097974202435756, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34.88
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577760, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_Pivot.x
@@ -8874,11 +8919,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577760, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 316.093
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577760, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 63.246
       objectReference: {fileID: 0}
     - target: {fileID: 8132097975935577760, guid: d1a41d83af7b21846b81531a52bedca1, type: 3}
       propertyPath: m_LocalPosition.x
