@@ -15,5 +15,6 @@ public class SheepsManager : MonoBehaviour
         {
             Sheeps.Add(transform.GetChild(i));
         }
+        GameManager.Instance.SetSheepsCount(Sheeps.Count);
     }
 }
