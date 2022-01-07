@@ -22,9 +22,6 @@ public class CameraOrbit : MonoBehaviour
     public float cameraDistanceLowerBoundary = 4;
     public float cameraDistanceUpperBoundary = 16f;
 
-    //ForAndroid
-    [SerializeField] private FixedJoystick joystick;
-
     public void StandartMode()
     {
         _CameraDistance = 11f;
@@ -54,7 +51,6 @@ public class CameraOrbit : MonoBehaviour
 
     void LateUpdate()
     {
-#if !UNITY_ANDROID
         //Отключение камеры
         if (Input.GetKeyDown(KeyCode.Mouse1))
             CameraDisabled = false;
@@ -73,26 +69,7 @@ public class CameraOrbit : MonoBehaviour
                 _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, 6f, 90f);
             }
         }
-#endif
-#if UNITY_ANDROID
-        if (joystick.Horizontal != 0 || joystick.Vertical != 0)
-            CameraDisabled = false;
-        if (Input.GetKeyUp(KeyCode.Mouse1))
-            CameraDisabled = true;
 
-        if (!CameraDisabled)
-        {
-            // Вращение камеры на основе координат мыши
-            if (joystick.Horizontal != 0 || joystick.Vertical != 0)
-            {
-                _LocalRotation.x -= joystick.Horizontal * 0.5f * MouseSensitivity;
-                _LocalRotation.y -= joystick.Vertical * 0.5f * MouseSensitivity;
-
-                // Установка границ вращения
-                _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, 6f, 90f);
-            }
-        }
-#endif
         // Зум
         if (Input.GetAxis("Mouse ScrollWheel") != 0f)
         {

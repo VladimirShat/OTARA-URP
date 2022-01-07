@@ -24,7 +24,6 @@ public class ThirdPersonController : MonoBehaviour
 
     //ForAndroid
     [SerializeField] private FixedJoystick joystick;
-    Vector2 jsVect;
 
     private void Awake()
     {
@@ -51,7 +50,6 @@ public class ThirdPersonController : MonoBehaviour
 
     private void FixedUpdate()
     {
-#if !UNITY_ANDROID
         forceDirection += move.ReadValue<Vector2>().x * GetCameraRight(playerCamera) * movementForce;
         forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(playerCamera) * movementForce;
 
@@ -68,30 +66,13 @@ public class ThirdPersonController : MonoBehaviour
 
         LookAt();
         Debug.Log(IsGrounded());
-#endif
-#if UNITY_ANDROID
-        forceDirection += joystick.Horizontal * GetCameraRight(playerCamera) * movementForce;
-        forceDirection += joystick.Vertical * GetCameraForward(playerCamera) * movementForce;
 
-        rb.AddForce(forceDirection, ForceMode.Impulse);
-        forceDirection = Vector3.zero;
+        /*rb.velocity = new Vector3(joystick.Horizontal * maxSpeed, rb.velocity.y, joystick.Vertical * maxSpeed);
 
-        if (rb.velocity.y < 0f)
-            rb.velocity -= Vector3.down * Physics.gravity.y * Time.fixedDeltaTime;
-
-        Vector3 horizontalVelocity = rb.velocity;
-        horizontalVelocity.y = 0;
-        if (horizontalVelocity.sqrMagnitude > maxSpeed * maxSpeed)
-            rb.velocity = horizontalVelocity.normalized * maxSpeed + Vector3.up * rb.velocity.y;
-
-        Vector3 direction = rb.velocity;
-        direction.y = 0f;
-        jsVect = new Vector2(joystick.Horizontal, joystick.Vertical);
-        if(jsVect.sqrMagnitude > 0.05f && direction.sqrMagnitude > 0.05f)
-            this.rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
-        else
-            rb.angularVelocity = Vector3.zero;
-#endif
+        if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+        {
+            transform.rotation = Quaternion.LookRotation(rb.velocity);
+        }*/
     }
 
     private void LookAt()
@@ -119,13 +100,8 @@ public class ThirdPersonController : MonoBehaviour
         return right.normalized;
     }
 
-    public void DoJump(InputAction.CallbackContext obj)
+    private void DoJump(InputAction.CallbackContext obj)
     {
-        JumpJump();
-    }
-
-    public void JumpJump()
-	{
         if (IsGrounded())
         {
             forceDirection += Vector3.up * jumpForce;
@@ -141,13 +117,8 @@ public class ThirdPersonController : MonoBehaviour
             return false;
     }
 
-    public void DoBark(InputAction.CallbackContext obj)
+    private void DoBark(InputAction.CallbackContext obj)
     {
-        BarkBark();
-    }
-
-    public void BarkBark()
-	{
         if (canBark)
         {
             canBark = false;
