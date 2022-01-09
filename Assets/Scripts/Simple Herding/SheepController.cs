@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Graze))]
 [RequireComponent(typeof(Fright))]
+[RequireComponent(typeof(Folower))]
 public class SheepController : MonoBehaviour
 {
     [Space]
@@ -27,6 +28,8 @@ public class SheepController : MonoBehaviour
 
     [HideInInspector]
     public bool isScared;
+    [HideInInspector]
+    public bool isCatched;
 
     SheepsManager sheepsManager;
     [HideInInspector]
@@ -72,10 +75,6 @@ public class SheepController : MonoBehaviour
             graze.enabled = false;
             fright.enabled = true;
         }
-    }
-
-    public void Scared()
-    {
     }
 
     RaycastHit[] hitO;

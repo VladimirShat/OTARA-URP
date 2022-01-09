@@ -20,25 +20,28 @@ public class Dog : MonoBehaviour
 
     private void Update()
     {
-        sphCollider.radius = Mathf.Lerp(sphCollider.radius, defaultRadius, 0.1f);
-
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            StartCoroutine(Bark());
+            StartCoroutine(Bark(4, 0.2f));
+        }
+
+        if(sphCollider.radius == 4)
+        {
+            StartCoroutine(Bark(defaultRadius, 0.1f));
         }
     }
 
-    IEnumerator Bark()
+    IEnumerator Bark(float endValue, float duration)
     {
-        sphCollider.radius *= 4f;
+        float time = 0;
+        float startValue = sphCollider.radius;
 
-        foreach (var sheep in sheepsAround)
+        while (time < duration)
         {
-            if (sheep.isScared)
-                sheep.Scared();
+            sphCollider.radius = Mathf.Lerp(startValue, endValue, time / duration);
+            time += Time.deltaTime;
+            yield return null;
         }
-
-        yield return null;
-        StopCoroutine(Bark());
+        sphCollider.radius = endValue;
     }
 }

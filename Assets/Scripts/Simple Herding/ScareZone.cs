@@ -5,7 +5,9 @@ using UnityEngine;
 public class ScareZone : MonoBehaviour
 {
     public Dog dog;
-    public float sheepRunningSpeed;
+    public float sheepRunSpeed;
+
+    float defaultSpeed;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,23 +15,20 @@ public class ScareZone : MonoBehaviour
 
         if (go.layer == LayerMask.NameToLayer("Sheep"))
         {
+            var sheep = go.GetComponent<SheepController>();
+
             if (!dog.sheepsAround.Contains(go.GetComponent<SheepController>()))
                 dog.sheepsAround.Add(go.GetComponent<SheepController>());
+
+            sheep.dogPosition = transform.position;
+            defaultSpeed = go.GetComponent<Fright>().RunSpeed;
+            go.GetComponent<Fright>().RunSpeed = sheepRunSpeed;
+            sheep.isScared = true;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        var go = other.gameObject;
-
-        if (go.layer == LayerMask.NameToLayer("Sheep"))
-        {
-            var sheep = go.GetComponent<SheepController>();
-            sheep.dogPosition = transform.position;
-            go.GetComponent<Fright>().RunSpeed = sheepRunningSpeed;
-            sheep.isScared = true;
-        }
-
         foreach (var sheep in dog.sheepsAround)
         {
             if (sheep.isScared)
@@ -44,6 +43,7 @@ public class ScareZone : MonoBehaviour
         if (go.layer == LayerMask.NameToLayer("Sheep"))
         {
             go.GetComponent<SheepController>().isScared = false;
+            go.GetComponent<Fright>().RunSpeed = defaultSpeed;
         }
     }
 }

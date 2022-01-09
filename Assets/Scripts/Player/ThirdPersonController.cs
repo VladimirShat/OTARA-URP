@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class ThirdPersonController : MonoBehaviour
 {
     private Controlls playerActionsAsset;
+    public float maxSpeed = 5f;
     private InputAction move;
 
     private Rigidbody rb;
@@ -13,8 +14,6 @@ public class ThirdPersonController : MonoBehaviour
     private float movementForce = 1f;
     [SerializeField]
     private float jumpForce = 5f;
-    [SerializeField]
-    private float maxSpeed = 5f;
     private Vector3 forceDirection = Vector3.zero;
     [SerializeField]
     private Camera playerCamera;

@@ -15,6 +15,12 @@ public class Graze : MonoBehaviour
     Vector3 target;
     float distanceToTarget;
 
+    private void OnEnable()
+    {
+        target = Vector3.zero;
+        goingToTarget = false;
+    }
+
     private void Start()
     {
         sheepController = GetComponent<SheepController>();

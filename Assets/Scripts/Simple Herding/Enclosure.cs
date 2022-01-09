@@ -26,8 +26,10 @@ public class Enclosure : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         sheepObject.GetComponent<SheepController>().enabled = false;
+        sheepObject.GetComponent<SheepController>().isCatched = true;
         sheepObject.GetComponent<Graze>().enabled = false;
         sheepObject.GetComponent<Fright>().enabled = false;
+        sheepObject.GetComponent<Folower>().enabled = false;
 
         yield return new WaitForSeconds(1);
 
